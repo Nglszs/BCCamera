@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0474DF3C1CCF078B00931064 /* AVCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474DF3B1CCF078B00931064 /* AVCameraViewController.m */; };
 		047DB4FA1CCDDC2400A242B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DB4F91CCDDC2400A242B3 /* main.m */; };
 		047DB4FD1CCDDC2400A242B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DB4FC1CCDDC2400A242B3 /* AppDelegate.m */; };
 		047DB5001CCDDC2400A242B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DB4FF1CCDDC2400A242B3 /* ViewController.m */; };
-		047DB5031CCDDC2400A242B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047DB5011CCDDC2400A242B3 /* Main.storyboard */; };
 		047DB5051CCDDC2400A242B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047DB5041CCDDC2400A242B3 /* Assets.xcassets */; };
 		047DB5081CCDDC2400A242B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047DB5061CCDDC2400A242B3 /* LaunchScreen.storyboard */; };
 		047DB5131CCDDC2500A242B3 /* BCCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DB5121CCDDC2500A242B3 /* BCCameraTests.m */; };
@@ -35,13 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0474DF3A1CCF078B00931064 /* AVCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCameraViewController.h; sourceTree = "<group>"; };
+		0474DF3B1CCF078B00931064 /* AVCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCameraViewController.m; sourceTree = "<group>"; };
 		047DB4F51CCDDC2400A242B3 /* BCCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047DB4F91CCDDC2400A242B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		047DB4FB1CCDDC2400A242B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		047DB4FC1CCDDC2400A242B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		047DB4FE1CCDDC2400A242B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		047DB4FF1CCDDC2400A242B3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		047DB5021CCDDC2400A242B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		047DB5041CCDDC2400A242B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047DB5071CCDDC2400A242B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		047DB5091CCDDC2400A242B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0474DF361CCEFBAC00931064 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				0474DF3A1CCF078B00931064 /* AVCameraViewController.h */,
+				0474DF3B1CCF078B00931064 /* AVCameraViewController.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
 		047DB4EC1CCDDC2400A242B3 = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +115,7 @@
 				047DB4FC1CCDDC2400A242B3 /* AppDelegate.m */,
 				047DB4FE1CCDDC2400A242B3 /* ViewController.h */,
 				047DB4FF1CCDDC2400A242B3 /* ViewController.m */,
-				047DB5011CCDDC2400A242B3 /* Main.storyboard */,
+				0474DF361CCEFBAC00931064 /* Camera */,
 				047DB5041CCDDC2400A242B3 /* Assets.xcassets */,
 				047DB5061CCDDC2400A242B3 /* LaunchScreen.storyboard */,
 				047DB5091CCDDC2400A242B3 /* Info.plist */,
@@ -245,7 +255,6 @@
 			files = (
 				047DB5081CCDDC2400A242B3 /* LaunchScreen.storyboard in Resources */,
 				047DB5051CCDDC2400A242B3 /* Assets.xcassets in Resources */,
-				047DB5031CCDDC2400A242B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +281,7 @@
 			files = (
 				047DB5001CCDDC2400A242B3 /* ViewController.m in Sources */,
 				047DB4FD1CCDDC2400A242B3 /* AppDelegate.m in Sources */,
+				0474DF3C1CCF078B00931064 /* AVCameraViewController.m in Sources */,
 				047DB4FA1CCDDC2400A242B3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,14 +318,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		047DB5011CCDDC2400A242B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				047DB5021CCDDC2400A242B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		047DB5061CCDDC2400A242B3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -496,6 +498,7 @@
 				047DB5241CCDDC2500A242B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		047DB5251CCDDC2500A242B3 /* Build configuration list for PBXNativeTarget "BCCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +507,7 @@
 				047DB5271CCDDC2500A242B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		047DB5281CCDDC2500A242B3 /* Build configuration list for PBXNativeTarget "BCCameraUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +516,7 @@
 				047DB52A1CCDDC2500A242B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
