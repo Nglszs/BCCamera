@@ -34,6 +34,7 @@
    
     self.title = @"拍照/视频";
     
+    //使用UIImagePickerController
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc]
                                 initWithTitle:@"UIImagePicker"
                                 style:UIBarButtonItemStylePlain
@@ -41,6 +42,8 @@
                                 action:@selector(imagePickerView)];
     self.navigationItem.leftBarButtonItem = leftBtn;
     
+    
+    //跳转使用AVFoundtion的界面
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]
                                  initWithTitle:@"AVFoundtion"
                                  style:UIBarButtonItemStylePlain
@@ -49,7 +52,7 @@
     self.navigationItem.rightBarButtonItem = rightBtn;
     
    
-    
+    //监听AVFoundation界面传过来的数据
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(havedImage:) name:@"havedImage" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(havedVideo:) name:@"havedVideo" object:nil];
@@ -57,26 +60,8 @@
     
 }
 
-- (void)havedImage:(NSNotification *)note {
-
-    if (note.object) {
-          _photo.image = note.object;
-    }
-  
-
-}
-
-- (void)havedVideo:(NSNotification *)note {
-
-    if (note.object) {
-        [self video:note.object didFinishSavingWithError:nil contextInfo:nil];
-    }
-
-
-
-}
 - (void)AVFoundationView {
-
+    
     AVCameraViewController *avCameraVC = [[AVCameraViewController alloc] init];
     [self.navigationController pushViewController:avCameraVC animated:NO];
 
@@ -315,6 +300,26 @@
 
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+//拍照
+- (void)havedImage:(NSNotification *)note {
+    
+    if (note.object) {
+        _photo.image = note.object;
+    }
+    
+    
+}
+
+//视频
+- (void)havedVideo:(NSNotification *)note {
+    
+    if (note.object) {
+        [self video:note.object didFinishSavingWithError:nil contextInfo:nil];
+    }
+    
+    
+    
 }
 
 - (void)dealloc {

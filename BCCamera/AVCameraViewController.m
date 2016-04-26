@@ -22,6 +22,8 @@
     
     self.title = @"AVFoundation";
     
+    
+    //点击选择
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]
                                  initWithTitle:@"点击"
                                  style:UIBarButtonItemStylePlain
@@ -32,8 +34,6 @@
 
     
     //初始化
-    
-    
     self.captureSession = [[AVCaptureSession alloc] init];
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
@@ -85,22 +85,23 @@
     
 }
 
-//自定义相机样式，这里简单的按钮
+//自定义相机样式，这里简单的按钮，你可以自定义复杂的界面
 - (void)initView {
     
-    
+    //用来模拟相机动画
     _maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BCWidth, BCHeight - 50)];
     [self.view addSubview:_maskView];
     
+    //拍照和录像的按钮
     _cameraButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _cameraButton.frame = CGRectMake(0, BCHeight - 50, BCWidth/2, 50);
     _cameraButton.hidden = YES;
-    
     [_cameraButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_cameraButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     _cameraButton.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:_cameraButton];
 
+    //切换摄像头
     _cutCameraButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _cutCameraButton.frame = CGRectMake(BCWidth/2, BCHeight - 50, BCWidth/2, 50);
     [_cutCameraButton setTitle:@"切换摄像头" forState:UIControlStateNormal];
@@ -112,6 +113,7 @@
      [_cutCameraButton addTarget:self action:@selector(cutCamera) forControlEvents:UIControlEventTouchUpInside];
 
 }
+
 //切换摄像头
 - (void)cutCamera {
 
@@ -139,6 +141,8 @@
 
 
 }
+
+//actionSheet
 - (void)cameraType {
 
     __weak typeof(self) weakSelf = self;
@@ -223,7 +227,7 @@
     
 }
 
-
+#pragma mark 拍照和录像的点击事件
 - (void)cameraAction {
 
     
@@ -292,7 +296,7 @@
     
 
 }
-    //视频保存后的回调
+#pragma mark 保存视频的回调
 - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
     if (error) {
         NSLog(@"保存视频过程中发生错误，错误信息:%@",error.localizedDescription);
@@ -330,7 +334,7 @@
 
   
 }
-//
+
 - (void)dealloc {
 
     NSLog(@"已释放");
