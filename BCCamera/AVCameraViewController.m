@@ -303,8 +303,12 @@
     }else{
         NSLog(@"视频保存成功.");
      
+      NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:videoPath error:nil];
+        NSInteger size = [dict[@"NSFileSize"] integerValue];
+
         
         
+        NSLog(@"视频大小%.2fM",size/(1000.00f * 1000.00f));
     }
 }
 
@@ -323,7 +327,7 @@
     if (lastBackgroundTaskIdentifier!=UIBackgroundTaskInvalid) {
         [[UIApplication sharedApplication] endBackgroundTask:lastBackgroundTaskIdentifier];
         
-    //这里视频保存的地址，可以跟前面的一样，这里不再写
+    //上面我是讲视频保存到tem文件夹，这里我讲视频再拷贝到相册里
         UISaveVideoAtPathToSavedPhotosAlbum([outputFileURL path], self, @selector(video:didFinishSavingWithError:contextInfo:), nil);//保存视频到相簿
         
     

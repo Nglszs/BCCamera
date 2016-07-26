@@ -44,12 +44,18 @@
     
     
     //跳转使用AVFoundtion的界面
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]
-                                 initWithTitle:@"AVFoundtion"
-                                 style:UIBarButtonItemStylePlain
-                                 target:self
-                                 action:@selector(AVFoundationView)];
-    self.navigationItem.rightBarButtonItem = rightBtn;
+   
+        UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]
+                                     initWithTitle:@"AVFoundtion"
+                                     style:UIBarButtonItemStylePlain
+                                     target:self
+                                     action:@selector(AVFoundationView)];
+        self.navigationItem.rightBarButtonItem = rightBtn;
+    
+    
+    
+    
+    
     
    
     //监听AVFoundation界面传过来的数据
@@ -210,7 +216,7 @@
         //三种保存方式，这是第一种，下面视频同理
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil);
        
-        
+       
         //第二种，保存到某个文件夹
         //   NSData *data;
         //        //判断图片是不是png格式的文件
@@ -270,6 +276,13 @@
         NSLog(@"保存视频过程中发生错误，错误信息:%@",error.localizedDescription);
         
     }else{
+        
+        NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:videoPath error:nil];
+        NSInteger size = [dict[@"NSFileSize"] integerValue];
+        
+        
+        
+       NSLog(@"视频大小%.2fM",size/(1000.00f * 1000.00f));
         
         NSLog(@"视频保存成功.");
         //录制完之后自动播放
